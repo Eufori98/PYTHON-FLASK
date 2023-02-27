@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <div class="container mt-5 border border-secondary">
+      <div class="card-body">
+          <h2 class="text-white">Editar</h2>
+          <form class="row g-3" action="/actualizar/{{videojuego.videojuego_id}}" method="POST">
+              <input id="videojuego_id" name="videojuego_id" value="{{videojuego.videojuego_id}}" hidden>
+              <div class="col-md-12">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{videojuego.nombre}}" placeholder="Nombre" required>
+              </div>
+              <div class="col-md-12">
+                <label for="precio" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="precio" name="precio" value="{{videojuego.precio}}" placeholder="Precio" required>
+              </div>
+              <div class="col-12">
+                <label for="plataforma" class="form-label">Plataforma</label>
+                <input type="number" class="form-control" id="plataforma_id" name="plataforma" value="{{videojuego.plataforma_id}}" placeholder="Plataforma" required>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Actualizar registro</button>
+                <a href="/" class="btn btn-danger">Cancelar</a>
+              </div>
+            </form>
+      </div>
+  </div>
+
+{% endblock %}
